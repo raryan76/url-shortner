@@ -5,7 +5,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
 
-    fetch("https://url-shortner-sepia-omega.vercel.app/", {
+    fetch("https://url-shortner-sepia-omega.vercel.app/url", {
         method: "POST",
         body: JSON.stringify({
             url: formData.get("url")
