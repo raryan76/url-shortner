@@ -12,7 +12,7 @@ async function handleGenerateNewShortURL(req, res) {
     visitHistory: [],
   });
 
-  return res.json({ id: shortID, url: `http://localhost:8001/${shortID}`, original: body.url });
+  return res.json({ id: shortID, url: `https://srturl.vercel.app/${shortID}`, original: body.url });
 }
 
 async function handleGetAnalytics(req, res) {
