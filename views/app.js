@@ -19,6 +19,7 @@ form.addEventListener("submit", (e) => {
         .then((data) => {
             storeURLs(data);
             mapUrls();
+            form.reset();
         })
         .catch((error) => console.log(error))
 })
