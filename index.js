@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
@@ -7,7 +8,7 @@ const cors = require("cors")
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB("mongodb+srv://rajaryan:rajaryan@cluster0.bhmp5hx.mongodb.net/shorturls?retryWrites=true&w=majority")
+connectToMongoDB(process.env.MONGODB_URI)
   .then(() => console.log("Mongodb connected"))
   .catch((error) => console.log(error.message))
 
@@ -35,5 +36,6 @@ app.get("/:shortId", async (req, res) => {
 
 
 app.listen(PORT, () => console.log(`Server Started at PORT:${PORT}`));
+console.log()
 
 module.exports = app;
